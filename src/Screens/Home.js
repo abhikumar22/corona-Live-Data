@@ -118,14 +118,14 @@ export default class Home extends Component {
             <table className="table">
               <thead>
                 <tr className="th">
-                  <th>country_name</th>
-                  <th>cases</th>
-                  <th>region</th>
-                  <th>deaths</th>
-                  <th>total_recovered</th>
-                  <th>new_deaths</th>
-                  <th>new_cases</th>
-                  <th>serious_critical</th>
+                  <th>Country</th>
+                  <th>Cases</th>
+                  <th>Region</th>
+                  <th>Deaths</th>
+                  <th>Total Recovered</th>
+                  <th>New Deaths</th>
+                  <th>New Cases</th>
+                  <th>Serious Critical</th>
                 </tr>
                 {this.state.valueArray.map(this.renderData)}
 
