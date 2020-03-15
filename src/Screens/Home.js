@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "../Style/css/Home.css";
 import Loader from 'react-loaders'
 import '../Style/css/loadercss.scss';
+import { WindMillLoading } from 'react-loadingg';
 
 
 
@@ -14,17 +15,17 @@ export default class Home extends Component {
       valueArray: '',
       value: '',
       valueArrayOriginal: '',
-      loaded:true,
+      loaded: true,
     };
 
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value },()=>{
-      this.filterList(this.state.value ) 
+    this.setState({ value: event.target.value }, () => {
+      this.filterList(this.state.value)
     });
-    
+
   }
 
   filterList(value) {
@@ -82,22 +83,22 @@ export default class Home extends Component {
       .then(res => {
         console.log("data", res.countries_stat)
         setTimeout(() => {
-         this.setvall(res.countries_stat) // this.setState({ position: 1 });
+          this.setvall(res.countries_stat) // this.setState({ position: 1 });
         }, 3000);
-        
+
         // history.push('/AllUserScreen',{ uid: res.uid })
 
       })
       .catch(error => console.log('Authorization failed : ' + error.message));
   }
 
-  setvall(val){
+  setvall(val) {
     this.setState({
       valueArray: val,
       valueArrayOriginal: val,
-    },()=>{
+    }, () => {
       this.setState({
-        loaded:false
+        loaded: false
       })
     })
   }
@@ -132,9 +133,9 @@ export default class Home extends Component {
               </thead>
             </table>
           </div>
-        :<div>
-          <h5>Fetching Live Data ....</h5>
-          <Loader loaded={this.state.loaded} type="pacman" active />
+          : <div>
+            {/* <h5>Fetching Live Data ....</h5> */}
+            <WindMillLoading />
           </div>}
       </div>
 
