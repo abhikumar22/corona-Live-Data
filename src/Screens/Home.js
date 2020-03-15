@@ -45,7 +45,7 @@ export default class Home extends Component {
     let q = value
     if (value != null && value !== '') {
       users = users.filter(function (user) {
-        return user.country_name.toLowerCase().includes(q);
+        return user.country_name.toLowerCase().includes(q.toLowerCase());
       });
       this.setState({ valueArray: users });
     } else {
