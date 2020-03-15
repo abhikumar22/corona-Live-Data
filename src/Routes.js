@@ -5,6 +5,7 @@ import { Router, Switch, Route } from "react-router-dom";
 // import Contact from "./Contact/Contact";
 // import Products from "./Product/Products";
 import Home from "./Screens/Home";
+import DashBoard from "./Screens/DashBoard";
 // import AllUserScreen from "./AllUserScreen/AllUserScreen";
 // import ChatScreen from "./ChatScreen/ChatScreen";
 import history from './history';
@@ -14,7 +15,9 @@ export default class Routes extends Component {
         return (
             <Router history={history}>
                 <Switch>
-                    <Route path="/" exact component={Home} />
+                    <Route path="/" exact component={DashBoard} />
+                    
+                    <Route path="/Home" component={Home} />
                     {/* <Route path="/About" component={About} />
                     <Route path="/Contact" component={Contact} />
                     <Route path="/Products" component={Products} />

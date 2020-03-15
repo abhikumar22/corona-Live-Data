@@ -94,7 +94,7 @@ export default class Home extends Component {
       .then(res => {
         setTimeout(() => {
           this.setvall(res.countries_stat)
-        }, 3000);
+        }, 1000);
       })
       .catch(error => console.log('Authorization failed : ' + error.message));
   }
