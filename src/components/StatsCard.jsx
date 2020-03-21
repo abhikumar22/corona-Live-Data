@@ -22,7 +22,7 @@ export class StatsCard extends Component {
   render() {
     return (
       <div className="card card-stats">
-        <div className="content">
+        <div className="content" style={{backgroundColor:'#454d55'}}>
           <Row>
             <Col xs={5}>
               <div className="icon-big text-center icon-warning">

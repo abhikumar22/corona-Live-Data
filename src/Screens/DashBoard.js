@@ -80,7 +80,7 @@ class Dashboard extends Component {
                 {/* <Grid> */}
                 <div>
                     {!this.state.loaded ?
-                        <div>
+                        <div style={{marginTop:10}}>
                             <Row>
                                 <Col lg={3} sm={6}>
                                     <StatsCard
