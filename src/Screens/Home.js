@@ -59,7 +59,7 @@ export default class Home extends Component {
       <tr index={index} key={index}>
         <td>{value.country_name}</td>
         <td>{value.cases}</td>
-        <td>{value.region.length!=0?value.region:"N.A"}</td>
+        {/* <td>{value.region.length!=0?value.region:"N.A"}</td> */}
         <td>{value.deaths}</td>
         <td>{value.total_recovered}</td>
         <td>{value.new_deaths}</td>
@@ -204,13 +204,13 @@ export default class Home extends Component {
                   >Cases
     
                   <span> <img alt="new"  src={require('../assests/arrow.png')} /></span></th>
-                  <th
+                  {/* <th
                     onClick={() => {
                       this.sortArray(3)
                     }}
                   >Region
     
-                  <span> <img  alt="new" src={require('../assests/arrow.png')} /></span></th>
+                  <span> <img  alt="new" src={require('../assests/arrow.png')} /></span></th> */}
                   <th
                     onClick={() => {
                       this.sortArray(4)
