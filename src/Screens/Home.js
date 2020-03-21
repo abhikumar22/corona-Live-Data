@@ -9,6 +9,11 @@ import {
 } from "../utils/constants";
 import '../Style/css/loadercss.scss';
 import { WindMillLoading } from 'react-loadingg';
+import Table from 'react-bootstrap/Table'
+import Spinner from 'react-bootstrap/Spinner'
+import Form from 'react-bootstrap/Form'
+import Row from 'react-bootstrap/Row'
+import Col from 'react-bootstrap/Col'
 
 export default class Home extends Component {
   constructor(props) {
@@ -172,20 +177,46 @@ export default class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
+      <div style={{backgroundColor:'#454d55'}} className="Home">
 
 
 
         {!this.state.loaded ?
           <div>
-            <label>
-              Enter Country to Search:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <h2 style={{ textAlign: 'center', alignSelf: 'center' }}>Corona Virus Live Stats</h2>
-            <table className="table">
+            {/* <label>
+              
+          <input 
+          style={{borderRadius:20,marginLeft:10}}  
+          placeholder={'Enter country'} 
+          type="text" 
+          value={this.state.value} 
+          onChange={this.handleChange}
+          placeholderStyle ={{ marginLeft:10 }}
+           />
+            </label> */}
+            <Form>
+              <div style={{justifyContent:'center',alignItems:'center',width:'40%',padding:20,alignSelf:'center'}}>
+  <Row>
+    <Col>
+      <Form.Control 
+      value={this.state.value} 
+      onChange={this.handleChange}
+      placeholder={'Enter Country'} />
+    </Col>
+    
+  </Row>
+  </div>
+</Form>
+            <div className="row" style={{justifyContent:'center',alignItems:'center',marginTop:20}}>
+            <h2 style={{ textAlign: 'center', alignSelf: 'center',color:'white' }}>Covid-19 Live Status</h2>
+            <Spinner animation="grow" style={{marginLeft:10}} variant={"danger"}/>
+            </div>
+            
+            
+            <Table style={{marginTop:10}}responsive="sm" striped bordered hover variant="dark">
               <thead>
                 <tr
+                t
                   className="th"
                 >
                   <th
@@ -194,7 +225,7 @@ export default class Home extends Component {
                       
                       
                     }}
-                  >Country
+                  ><span>Country</span>
                     <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
@@ -250,7 +281,7 @@ export default class Home extends Component {
                 {this.state.valueArray.map(this.renderData)}
 
               </thead>
-            </table>
+            </Table>
           </div>
           : <div>
             <WindMillLoading />
