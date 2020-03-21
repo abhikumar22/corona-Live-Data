@@ -8,7 +8,7 @@ import {
   GET,
 } from "../utils/constants";
 import '../Style/css/loadercss.scss';
-import { WindMillLoading } from 'react-loadingg';
+import { SemipolarLoading } from 'react-loadingg';
 import Table from 'react-bootstrap/Table'
 import Spinner from 'react-bootstrap/Spinner'
 import Form from 'react-bootstrap/Form'
@@ -99,7 +99,7 @@ export default class Home extends Component {
       .then(res => {
         setTimeout(() => {
           this.setvall(res.countries_stat)
-        }, 1000);
+        }, 100);
       })
       .catch(error => console.log('Authorization failed : ' + error.message));
   }
@@ -178,7 +178,6 @@ export default class Home extends Component {
   render() {
     return (
       <div style={{backgroundColor:'#454d55'}} className="Home">
-
 
 
         {!this.state.loaded ?
@@ -284,7 +283,9 @@ export default class Home extends Component {
             </Table>
           </div>
           : <div>
-            <WindMillLoading />
+            <SemipolarLoading
+            color={'yellow'}
+            />
           </div>}
       </div>
     );

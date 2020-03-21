@@ -16,7 +16,7 @@
 
 */
 import React, { Component } from "react";
-import { Row, Col ,button} from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import history from './../history';
 import "../Style/css/Home.css";
 import {
@@ -26,7 +26,8 @@ import {
     GET,
 } from "../utils/constants";
 import '../Style/css/loadercss.scss';
-import { WindMillLoading } from 'react-loadingg';
+import { SemipolarLoading } from 'react-loadingg';
+import Button from 'react-bootstrap/Button'
 
 
 import { StatsCard } from "../components/StatsCard.jsx";
@@ -80,7 +81,7 @@ class Dashboard extends Component {
                 {/* <Grid> */}
                 <div>
                     {!this.state.loaded ?
-                        <div style={{marginTop:10}}>
+                        <div style={{marginTop:10,justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
                             <Row>
                                 <Col lg={3} sm={6}>
                                     <StatsCard
@@ -131,17 +132,20 @@ class Dashboard extends Component {
                                 </Col>
                                 <Col lg={3} sm={6}>
                                     <div style={{justifyContent:'center', alignItems:'center',display:'flex',paddingBottom:20}}>
-                                <button type="button" className="btn btn-primary" onClick={()=>{
+                                
+                                 <Button 
+                                 onClick={()=>{
                                     history.push('/Home', {
                                     })
-                                }}>View All</button>
+                                }}variant="outline-info">View All</Button>{' '}
                                 </div>
                                 </Col>
 
                             </Row>
                         </div> :
                         <div>
-                            <WindMillLoading />
+                            <SemipolarLoading
+            color={'yellow'} />
                         </div>
                     }
                 </div>
