@@ -206,7 +206,7 @@ export default class Home extends Component {
   </Row>
   </div>
 </Form>
-            <div className="row" style={{justifyContent:'center',alignItems:'center',marginTop:20}}>
+            <div className="row" style={{justifyContent:'center',alignItems:'center'}}>
             <h2 style={{ textAlign: 'center', alignSelf: 'center',color:'white' }}>Covid-19 Live Status</h2>
             <Spinner animation="grow" style={{marginLeft:10}} variant={"danger"}/>
             </div>
