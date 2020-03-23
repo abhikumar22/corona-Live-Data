@@ -217,23 +217,23 @@ export default class Home extends Component {
             <Table style={{marginTop:10}}responsive="sm" striped bordered hover variant="dark">
               <thead>
                 <tr
-                t
                   className="th"
                 >
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                         this.sortArray(1)
-                      
-                      
                     }}
-                  ><span>Country</span>
+                  ><span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Country</span>
                     <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(2)
                     }}
-                  >Cases
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Cases</span>
     
                   <span> <img alt="new"  src={require('../assests/arrow.png')} /></span></th>
                   {/* <th
@@ -244,52 +244,66 @@ export default class Home extends Component {
     
                   <span> <img  alt="new" src={require('../assests/arrow.png')} /></span></th> */}
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(4)
                     }}
-                  >Deaths
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Deaths</span>
     
                   <span> <img alt="new"  src={require('../assests/arrow.png')} /></span></th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(5)
                     }}
-                  >Total Recovered
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Total Recovered</span>
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(6)
                     }}
-                  >New Deaths
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>New Deaths</span>
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(7)
                     }}
-                  >New Cases
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>New Cases</span>
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(8)
                     }}
-                  >Serious Critical
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Serious Critical</span>
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(9)
                     }}
-                  >Active Cases
+                  >
+                      <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Active Cases</span>
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
+                  style={{cursor: 'pointer'}}
                     onClick={() => {
                       this.sortArray(10)
                     }}
-                  >Total Cases per 1m Population
+                  >
+                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Total Cases per 1m Population</span>
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                 </tr>
