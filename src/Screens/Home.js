@@ -70,8 +70,12 @@ export default class Home extends Component {
         <td>{value.new_deaths}</td>
         <td>{value.new_cases}</td>
         <td>{value.serious_critical}</td>
+        <td>{value.active_cases}</td>
+        <td>{value.total_cases_per_1m_population}</td>
+
       </tr>
     )
+
   }
 
   componentDidMount() {
@@ -135,11 +139,11 @@ export default class Home extends Component {
     } else {
       if(type===2){
 
-      console.log(typeof(users[0].cases));
+      // console.log(typeof(users[0].cases));
         users.sort(function (a, b) {
           return sortType===0?parseInt(a.cases.replace(/[^\w ]/, '')) - parseInt(b.cases.replace(/[^\w ]/, '')):parseInt(b.cases.replace(/[^\w ]/, '')) - parseInt(a.cases.replace(/[^\w ]/, ''));
         });
-        console.warn("after",users)
+        // console.warn("after",users)
       }else if(type===3){
         users.sort(function (a, b) {
           return sortType===0?a.region.replace(/[^\w ]/, '') - b.region.replace(/[^\w ]/, ''):b.region.replace(/[^\w ]/, '') - a.region.replace(/[^\w ]/, '');
@@ -161,10 +165,21 @@ export default class Home extends Component {
         users.sort(function (a, b) {
           return sortType===0?a.new_cases.replace(/[^\w ]/, '') - b.new_cases.replace(/[^\w ]/, ''):b.new_cases.replace(/[^\w ]/, '') - a.new_cases.replace(/[^\w ]/, '');
         });
-      }else{
-          users.sort(function (a, b) {
+      }
+      else if(type===8){
+        users.sort(function (a, b) {
           return sortType===0?a.serious_critical.replace(/[^\w ]/, '') - b.serious_critical.replace(/[^\w ]/, ''):b.serious_critical.replace(/[^\w ]/, '') - a.serious_critical.replace(/[^\w ]/, '');
           });
+       
+      }else if(type===9){
+        users.sort(function (a, b) {
+          return sortType===0?a.active_cases.replace(/[^\w ]/, '') - b.active_cases.replace(/[^\w ]/, ''):b.active_cases.replace(/[^\w ]/, '') - a.active_cases.replace(/[^\w ]/, '');
+        });
+      }
+      else{
+        users.sort(function (a, b) {
+          return sortType===0?a.total_cases_per_1m_population.replace(/[^\w ]/, '') - b.total_cases_per_1m_population.replace(/[^\w ]/, ''):b.total_cases_per_1m_population.replace(/[^\w ]/, '') - a.total_cases_per_1m_population.replace(/[^\w ]/, '');
+        });
       }
     }
     this.setState({ 
@@ -178,21 +193,8 @@ export default class Home extends Component {
   render() {
     return (
       <div style={{backgroundColor:'#454d55'}} className="Home">
-
-
         {!this.state.loaded ?
           <div>
-            {/* <label>
-              
-          <input 
-          style={{borderRadius:20,marginLeft:10}}  
-          placeholder={'Enter country'} 
-          type="text" 
-          value={this.state.value} 
-          onChange={this.handleChange}
-          placeholderStyle ={{ marginLeft:10 }}
-           />
-            </label> */}
             <Form>
               <div style={{justifyContent:'center',alignItems:'center',width:'40%',padding:20,alignSelf:'center'}}>
   <Row>
@@ -274,6 +276,20 @@ export default class Home extends Component {
                       this.sortArray(8)
                     }}
                   >Serious Critical
+                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                  </th>
+                  <th
+                    onClick={() => {
+                      this.sortArray(9)
+                    }}
+                  >Active Cases
+                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                  </th>
+                  <th
+                    onClick={() => {
+                      this.sortArray(10)
+                    }}
+                  >Total Cases per 1m Population
                     <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
                   </th>
                 </tr>
