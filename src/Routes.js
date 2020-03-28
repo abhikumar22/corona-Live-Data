@@ -1,13 +1,7 @@
 import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
-
-// import About from "./About/About.js";
-// import Contact from "./Contact/Contact";
-// import Products from "./Product/Products";
 import Home from "./Screens/Home";
 import DashBoard from "./Screens/DashBoard";
-// import AllUserScreen from "./AllUserScreen/AllUserScreen";
-// import ChatScreen from "./ChatScreen/ChatScreen";
 import history from './history';
 
 export default class Routes extends Component {
@@ -16,13 +10,7 @@ export default class Routes extends Component {
             <Router history={history}>
                 <Switch>
                     <Route path="/" exact component={DashBoard} />
-                    
                     <Route path="/Home" component={Home} />
-                    {/* <Route path="/About" component={About} />
-                    <Route path="/Contact" component={Contact} />
-                    <Route path="/Products" component={Products} />
-                    <Route path="/AllUserScreen" component={AllUserScreen} />
-                    <Route path="/ChatScreen" component={ChatScreen} /> */}
                 </Switch>
             </Router>
         )

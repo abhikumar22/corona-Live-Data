@@ -23,7 +23,7 @@ export default class Home extends Component {
       value: '',
       valueArrayOriginal: '',
       loaded: true,
-      asc:0,
+      asc: 0,
       width: 0, height: 0
     };
     this.handleChange = this.handleChange.bind(this);
@@ -33,7 +33,7 @@ export default class Home extends Component {
   componentWillUnmount() {
     window.removeEventListener('resize', this.updateWindowDimensions);
   }
-  
+
   updateWindowDimensions() {
     this.setState({ width: window.innerWidth, height: window.innerHeight });
   }
@@ -123,13 +123,13 @@ export default class Home extends Component {
     let users = this.state.valueArrayOriginal;
     let sortType = this.state.asc
     if (type === 1) {
-      if(sortType===0){
+      if (sortType === 0) {
         users.sort(function (a, b) {
           if (a.country_name < b.country_name) { return -1; }
           if (a.country_name > b.country_name) { return 1; }
           return 0;
         })
-      }else{
+      } else {
         users.sort(function (a, b) {
           if (a.country_name > b.country_name) { return -1; }
           if (a.country_name < b.country_name) { return 1; }
@@ -137,105 +137,105 @@ export default class Home extends Component {
         })
       }
     } else {
-      if(type===2){
+      if (type === 2) {
 
-      // console.log(typeof(users[0].cases));
+        // console.log(typeof(users[0].cases));
         users.sort(function (a, b) {
-          return sortType===0?parseInt(a.cases.replace(/[^\w ]/, '')) - parseInt(b.cases.replace(/[^\w ]/, '')):parseInt(b.cases.replace(/[^\w ]/, '')) - parseInt(a.cases.replace(/[^\w ]/, ''));
+          return sortType === 0 ? parseInt(a.cases.replace(/[^\w ]/, '')) - parseInt(b.cases.replace(/[^\w ]/, '')) : parseInt(b.cases.replace(/[^\w ]/, '')) - parseInt(a.cases.replace(/[^\w ]/, ''));
         });
         // console.warn("after",users)
-      }else if(type===3){
+      } else if (type === 3) {
         users.sort(function (a, b) {
-          return sortType===0?a.region.replace(/[^\w ]/, '') - b.region.replace(/[^\w ]/, ''):b.region.replace(/[^\w ]/, '') - a.region.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.region.replace(/[^\w ]/, '') - b.region.replace(/[^\w ]/, '') : b.region.replace(/[^\w ]/, '') - a.region.replace(/[^\w ]/, '');
         });
-      }else if(type===4){
+      } else if (type === 4) {
         users.sort(function (a, b) {
-          return sortType===0?a.deaths.replace(/[^\w ]/, '') - b.deaths.replace(/[^\w ]/, ''):b.deaths.replace(/[^\w ]/, '') - a.deaths.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.deaths.replace(/[^\w ]/, '') - b.deaths.replace(/[^\w ]/, '') : b.deaths.replace(/[^\w ]/, '') - a.deaths.replace(/[^\w ]/, '');
         });
-      }else if(type===5){
+      } else if (type === 5) {
         users.sort(function (a, b) {
-          return sortType===0?a.total_recovered.replace(/[^\w ]/, '') - b.total_recovered.replace(/[^\w ]/, ''):b.total_recovered.replace(/[^\w ]/, '') - a.total_recovered.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.total_recovered.replace(/[^\w ]/, '') - b.total_recovered.replace(/[^\w ]/, '') : b.total_recovered.replace(/[^\w ]/, '') - a.total_recovered.replace(/[^\w ]/, '');
         });
-      }else if(type===6){
+      } else if (type === 6) {
         users.sort(function (a, b) {
-          return sortType===0?a.new_deaths.replace(/[^\w ]/, '') - b.new_deaths.replace(/[^\w ]/, ''):b.new_deaths.replace(/[^\w ]/, '') - a.new_deaths.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.new_deaths.replace(/[^\w ]/, '') - b.new_deaths.replace(/[^\w ]/, '') : b.new_deaths.replace(/[^\w ]/, '') - a.new_deaths.replace(/[^\w ]/, '');
 
         });
-      }else if(type===7){
+      } else if (type === 7) {
         users.sort(function (a, b) {
-          return sortType===0?a.new_cases.replace(/[^\w ]/, '') - b.new_cases.replace(/[^\w ]/, ''):b.new_cases.replace(/[^\w ]/, '') - a.new_cases.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.new_cases.replace(/[^\w ]/, '') - b.new_cases.replace(/[^\w ]/, '') : b.new_cases.replace(/[^\w ]/, '') - a.new_cases.replace(/[^\w ]/, '');
         });
       }
-      else if(type===8){
+      else if (type === 8) {
         users.sort(function (a, b) {
-          return sortType===0?a.serious_critical.replace(/[^\w ]/, '') - b.serious_critical.replace(/[^\w ]/, ''):b.serious_critical.replace(/[^\w ]/, '') - a.serious_critical.replace(/[^\w ]/, '');
-          });
-       
-      }else if(type===9){
+          return sortType === 0 ? a.serious_critical.replace(/[^\w ]/, '') - b.serious_critical.replace(/[^\w ]/, '') : b.serious_critical.replace(/[^\w ]/, '') - a.serious_critical.replace(/[^\w ]/, '');
+        });
+
+      } else if (type === 9) {
         users.sort(function (a, b) {
-          return sortType===0?a.active_cases.replace(/[^\w ]/, '') - b.active_cases.replace(/[^\w ]/, ''):b.active_cases.replace(/[^\w ]/, '') - a.active_cases.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.active_cases.replace(/[^\w ]/, '') - b.active_cases.replace(/[^\w ]/, '') : b.active_cases.replace(/[^\w ]/, '') - a.active_cases.replace(/[^\w ]/, '');
         });
       }
-      else{
+      else {
         users.sort(function (a, b) {
-          return sortType===0?a.total_cases_per_1m_population.replace(/[^\w ]/, '') - b.total_cases_per_1m_population.replace(/[^\w ]/, ''):b.total_cases_per_1m_population.replace(/[^\w ]/, '') - a.total_cases_per_1m_population.replace(/[^\w ]/, '');
+          return sortType === 0 ? a.total_cases_per_1m_population.replace(/[^\w ]/, '') - b.total_cases_per_1m_population.replace(/[^\w ]/, '') : b.total_cases_per_1m_population.replace(/[^\w ]/, '') - a.total_cases_per_1m_population.replace(/[^\w ]/, '');
         });
       }
     }
-    this.setState({ 
+    this.setState({
       valueArray: users,
-      asc:sortType===0?1:0
-     })
+      asc: sortType === 0 ? 1 : 0
+    })
   }
 
 
 
   render() {
     return (
-      <div style={{backgroundColor:'#454d55'}} className="Home">
+      <div style={{ backgroundColor: '#454d55' }} className="Home">
         {!this.state.loaded ?
           <div>
             <Form>
-              <div style={{justifyContent:'center',alignItems:'center',width:'40%',padding:20,alignSelf:'center'}}>
-  <Row>
-    <Col>
-      <Form.Control 
-      value={this.state.value} 
-      onChange={this.handleChange}
-      placeholder={'Enter Country'} />
-    </Col>
-    
-  </Row>
-  </div>
-</Form>
-            <div className="row" style={{justifyContent:'center',alignItems:'center'}}>
-            <h2 style={{ textAlign: 'center', alignSelf: 'center',color:'white' }}>Covid-19 Live Status</h2>
-            <Spinner animation="grow" style={{marginLeft:10}} variant={"danger"}/>
+              <div style={{ justifyContent: 'center', alignItems: 'center', width: '40%', padding: 20, alignSelf: 'center' }}>
+                <Row>
+                  <Col>
+                    <Form.Control
+                      value={this.state.value}
+                      onChange={this.handleChange}
+                      placeholder={'Enter Country'} />
+                  </Col>
+
+                </Row>
+              </div>
+            </Form>
+            <div className="row" style={{ justifyContent: 'center', alignItems: 'center' }}>
+              <h2 style={{ textAlign: 'center', alignSelf: 'center', color: 'white' }}>Covid-19 Live Status</h2>
+              <Spinner animation="grow" style={{ marginLeft: 10 }} variant={"danger"} />
             </div>
-            
-            
-            <Table style={{marginTop:10}}responsive="sm" striped bordered hover variant="dark">
+
+
+            <Table style={{ marginTop: 10 }} responsive="sm" striped bordered hover variant="dark">
               <thead>
                 <tr
                   className="th"
                 >
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
-                        this.sortArray(1)
+                      this.sortArray(1)
                     }}
-                  ><span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Country</span>
+                  ><span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Country</span>
                     <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(2)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Cases</span>
-    
-                  <span> <img alt="new"  src={require('../assests/arrow.png')} /></span></th>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Cases</span>
+
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span></th>
                   {/* <th
                     onClick={() => {
                       this.sortArray(3)
@@ -244,67 +244,67 @@ export default class Home extends Component {
     
                   <span> <img  alt="new" src={require('../assests/arrow.png')} /></span></th> */}
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(4)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Deaths</span>
-    
-                  <span> <img alt="new"  src={require('../assests/arrow.png')} /></span></th>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Deaths</span>
+
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span></th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(5)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Total Recovered</span>
-                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Total Recovered</span>
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(6)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>New Deaths</span>
-                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>New Deaths</span>
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(7)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>New Cases</span>
-                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>New Cases</span>
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(8)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Serious Critical</span>
-                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Serious Critical</span>
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(9)
                     }}
                   >
-                      <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Active Cases</span>
-                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Active Cases</span>
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                   <th
-                  style={{cursor: 'pointer'}}
+                    style={{ cursor: 'pointer' }}
                     onClick={() => {
                       this.sortArray(10)
                     }}
                   >
-                    <span style={{fontWeight:'bolder',color:'white',fontSize:16}}>Total Cases per 1m Population</span>
-                    <span> <img alt="new"  src={require('../assests/arrow.png')} /></span>
+                    <span style={{ fontWeight: 'bolder', color: 'white', fontSize: 16 }}>Total Cases per 1m Population</span>
+                    <span> <img alt="new" src={require('../assests/arrow.png')} /></span>
                   </th>
                 </tr>
                 {this.state.valueArray.map(this.renderData)}
@@ -314,7 +314,7 @@ export default class Home extends Component {
           </div>
           : <div>
             <SemipolarLoading
-            color={'yellow'}
+              color={'yellow'}
             />
           </div>}
       </div>
