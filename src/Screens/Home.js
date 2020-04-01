@@ -101,7 +101,7 @@ export default class Home extends Component {
     })
       .then(response => response.json())
       .then(res => {
-        console.log("resssss",res)
+        // console.log("resssss", res)
         setTimeout(() => {
           this.setvall(res.countries_stat)
         }, 100);
