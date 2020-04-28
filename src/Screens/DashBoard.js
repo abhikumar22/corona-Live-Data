@@ -65,7 +65,7 @@ class Dashboard extends Component {
                 <div>
                     {!this.state.loaded ?
                         <div style={{marginTop:10,justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
-                            <Row>
+                            <Row style={{justifyContent:'center'}}>
                                 <Col lg={3} sm={6}>
                                     <StatsCard
                                         bigIcon={<i className="pe-7s-server text-warning" />}
@@ -94,7 +94,7 @@ class Dashboard extends Component {
                                     />
                                 </Col>
                             </Row>
-                            <Row>
+                            <Row style={{justifyContent:'center'}}>
                                 <Col lg={3} sm={6}>
                                     <StatsCard
                                         bigIcon={<i className="pe-7s-attention text-info" />}
